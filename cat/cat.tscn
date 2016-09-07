@@ -1,0 +1,241 @@
+[gd_scene load_steps=28 format=1]
+
+[ext_resource path="res://cat/cat.gd" type="Script" id=1]
+[ext_resource path="res://cat/cat-spin.png" type="Texture" id=2]
+[ext_resource path="res://cat/cat-anim-walk.0000.png" type="Texture" id=3]
+[ext_resource path="res://cat/cat-anim-walk.0001.png" type="Texture" id=4]
+[ext_resource path="res://cat/cat-anim-walk.0002.png" type="Texture" id=5]
+[ext_resource path="res://cat/cat-anim-walk.0003.png" type="Texture" id=6]
+[ext_resource path="res://cat/cat-anim-climb.0000.png" type="Texture" id=7]
+[ext_resource path="res://cat/cat-anim-climb.0001.png" type="Texture" id=8]
+[ext_resource path="res://cat/cat-anim-climb.0002.png" type="Texture" id=9]
+[ext_resource path="res://cat/cat-anim-climb.0003.png" type="Texture" id=10]
+[ext_resource path="res://cat/cat-anim-climb.0004.png" type="Texture" id=11]
+[ext_resource path="res://cat/cat-anim-jump.0001.png" type="Texture" id=12]
+[ext_resource path="res://cat/cat-anim-jump.0002.png" type="Texture" id=13]
+[ext_resource path="res://cat/cat-anim-sit.0001.png" type="Texture" id=14]
+[ext_resource path="res://cat/cat-anim-sit.0002.png" type="Texture" id=15]
+[ext_resource path="res://cat/catjumpdown1.png" type="Texture" id=16]
+[ext_resource path="res://cat/catjumpdown2.png" type="Texture" id=17]
+[ext_resource path="res://cat/cat-paw.png" type="Texture" id=18]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ { "frames":[ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ], "loop":true, "name":"default", "speed":5.0 } ]
+
+[sub_resource type="Animation" id=2]
+
+resource/name = "climb"
+length = 0.4
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0, 0.1, 0.3 ), "transitions":FloatArray( 1, 1, 1 ), "update":1, "values":[ 5, 6, 5 ] }
+tracks/1/type = "value"
+tracks/1/path = NodePath("sprite:transform/pos")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = { "times":FloatArray( 0, 0.1, 0.4 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ Vector2( 0, 0 ), Vector2( 0, -16 ), Vector2( 0, 0 ) ] }
+
+[sub_resource type="Animation" id=3]
+
+resource/name = "climb_on_top"
+length = 0.3
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0, 0.1, 0.2, 0.3 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":1, "values":[ 5, 7, 8, 9 ] }
+
+[sub_resource type="Animation" id=4]
+
+resource/name = "jump"
+length = 0.2
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0, 0.1, 0.2 ), "transitions":FloatArray( 1, 1, 1 ), "update":1, "values":[ 10, 11, 11 ] }
+tracks/1/type = "value"
+tracks/1/path = NodePath("sprite:transform/pos")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = { "times":FloatArray( 0, 0.1, 0.2 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, -16 ) ] }
+
+[sub_resource type="Animation" id=5]
+
+resource/name = "jump_down"
+length = 0.3
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0, 0.2 ), "transitions":FloatArray( 1, 1 ), "update":1, "values":[ 14, 15 ] }
+
+[sub_resource type="Animation" id=6]
+
+resource/name = "sit_down"
+length = 0.2
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0, 0.1, 0.2 ), "transitions":FloatArray( 1, 1, 1 ), "update":1, "values":[ 1, 12, 13 ] }
+
+[sub_resource type="Animation" id=7]
+
+length = 0.2
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:transform/rot")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0, 0.05, 0.1, 0.15, 0.2 ), "transitions":FloatArray( 1, 1, 1, 1, 1 ), "update":0, "values":[ 0.0, -90.2116, -180.236, -269.933, 0.355894 ] }
+tracks/1/type = "value"
+tracks/1/path = NodePath("sprite:frame")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = { "times":FloatArray( 0, 0.2 ), "transitions":FloatArray( 1, 1 ), "update":1, "values":[ 0, 0 ] }
+
+[sub_resource type="Animation" id=8]
+
+length = 0.2
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0, 0.05, 0.1, 0.15, 0.2 ), "transitions":FloatArray( 1, 1, 1, 1, 1 ), "update":1, "values":[ 1, 2, 3, 4, 1 ] }
+
+[sub_resource type="ColorRamp" id=9]
+
+offsets = FloatArray( 0, 1 )
+colors = ColorArray( 1, 1, 1, 0.720014, 1, 1, 1, 0 )
+
+[node name="cat" type="KinematicBody2D"]
+
+input/pickable = false
+collision/layers = 2
+collision/mask = 1
+collision/margin = 0.08
+script/script = ExtResource( 1 )
+
+[node name="sprite" type="AnimatedSprite" parent="."]
+
+frames = SubResource( 1 )
+animation = "default"
+frame = 6
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/climb = SubResource( 2 )
+anims/climb_on_top = SubResource( 3 )
+anims/jump = SubResource( 4 )
+anims/jump_down = SubResource( 5 )
+anims/sit_down = SubResource( 6 )
+anims/spin = SubResource( 7 )
+anims/walk = SubResource( 8 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = ""
+
+[node name="flight_trace" type="Particles2D" parent="."]
+
+visibility/visible = false
+config/amount = 16
+config/lifetime = 2.0
+config/preprocess = 0.1
+config/local_space = false
+config/texture = ExtResource( 18 )
+params/direction = 0.0
+params/spread = 0.0
+params/linear_velocity = 0.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 0.0
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 0.5
+params/final_size = 0.2
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+color/color_ramp = SubResource( 9 )
+
+[node name="ray_bottom" type="RayCast2D" parent="."]
+
+transform/pos = Vector2( -40.7625, 73.4843 )
+enabled = true
+cast_to = Vector2( 80, 0 )
+layer_mask = 3
+type_mask = 15
+
+[node name="ray_bottom_check" type="RayCast2D" parent="."]
+
+transform/pos = Vector2( 0.237499, 53.4843 )
+enabled = true
+cast_to = Vector2( 0, 50 )
+layer_mask = 3
+type_mask = 15
+
+[node name="ray_right" type="RayCast2D" parent="."]
+
+transform/pos = Vector2( 70.0247, -19.4529 )
+enabled = true
+cast_to = Vector2( 0, 80 )
+layer_mask = 1
+type_mask = 15
+
+[node name="ray_left" type="RayCast2D" parent="."]
+
+transform/pos = Vector2( -68.3476, -18.9126 )
+enabled = true
+cast_to = Vector2( 0, 80 )
+layer_mask = 1
+type_mask = 15
+
+[node name="ray_top" type="RayCast2D" parent="."]
+
+transform/pos = Vector2( -40, -62 )
+enabled = true
+cast_to = Vector2( 80, 0 )
+layer_mask = 1
+type_mask = 15
+
+[node name="ray_br" type="RayCast2D" parent="."]
+
+transform/pos = Vector2( 80, 65 )
+enabled = true
+cast_to = Vector2( 0, 50 )
+layer_mask = 1
+type_mask = 15
+
+[node name="ray_bl" type="RayCast2D" parent="."]
+
+transform/pos = Vector2( -78.108, 65 )
+enabled = true
+cast_to = Vector2( 0, 50 )
+layer_mask = 1
+type_mask = 15
+
+

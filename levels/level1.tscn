@@ -1,0 +1,106 @@
+[gd_scene load_steps=7 format=1]
+
+[ext_resource path="res://levels/level.gd" type="Script" id=1]
+[ext_resource path="res://tileset-things/tileset-things.tres" type="TileSet" id=2]
+[ext_resource path="res://tileset-gound/tileset-ground.tres" type="TileSet" id=3]
+[ext_resource path="res://dwarf/dwarf.tscn" type="PackedScene" id=4]
+
+[sub_resource type="CanvasItemShader" id=1]
+
+_code = { "fragment":"uniform color col;\nCOLOR = col;\n", "fragment_ofs":0, "light":"", "light_ofs":0, "vertex":"", "vertex_ofs":0 }
+
+[sub_resource type="CanvasItemMaterial" id=2]
+
+shader/shader = SubResource( 1 )
+shader/shading_mode = 0
+shader_param/col = Color( 0.0986938, 0.732824, 0.902344, 1 )
+
+[node name="level" type="Node2D"]
+
+material/material = SubResource( 2 )
+script/script = ExtResource( 1 )
+cats = 5
+
+[node name="things" type="TileMap" parent="."]
+
+transform/pos = Vector2( 0, 4 )
+mode = 0
+tile_set = ExtResource( 2 )
+cell/size = Vector2( 64, 64 )
+cell/quadrant_size = 16
+cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+cell/half_offset = 2
+cell/tile_origin = 0
+cell/y_sort = false
+collision/use_kinematic = false
+collision/friction = 1.0
+collision/bounce = 0.0
+collision/layers = 1
+collision/mask = 1
+occluder/light_mask = 1
+tile_data = IntArray( 458781, 1, 458783, 1, 458785, 1, 589840, 5, 589851, 0, 589853, 1, 589855, 1, 589857, 1, 720912, 4, 720923, 0, 720925, 1, 720927, 1, 720929, 1, 720931, 1, 851991, 0, 851993, 0, 851995, 0, 851997, 1, 851999, 1, 852001, 1, 852003, 1 )
+__meta__ = { "_edit_lock_":true }
+
+[node name="ground" type="TileMap" parent="."]
+
+mode = 0
+tile_set = ExtResource( 3 )
+cell/size = Vector2( 64, 64 )
+cell/quadrant_size = 16
+cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+cell/half_offset = 2
+cell/tile_origin = 0
+cell/y_sort = false
+collision/use_kinematic = false
+collision/friction = 1.0
+collision/bounce = 0.0
+collision/layers = 1
+collision/mask = 1
+occluder/light_mask = 1
+tile_data = IntArray( 1048568, 0, 1048570, 0, 1048572, 0, 1048574, 0, 983040, 0, 983042, 0, 983044, 0, 983046, 0, 983048, 0, 983050, 0, 983052, 0, 983054, 0, 983056, 0, 983058, 0, 983060, 0, 983062, 0, 983064, 0, 983066, 0, 983068, 0, 983070, 0, 983072, 0, 983074, 0, 983076, 0, 983078, 0, 983080, 0 )
+__meta__ = { "_edit_lock_":true }
+
+[node name="dwarf" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 1789.87, 511.966 )
+
+[node name="dwarf1" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 1402.31, 897.469 )
+
+[node name="dwarf2" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 1654.53, 766.234 )
+
+[node name="cat_place" type="Node2D" parent="."]
+
+[node name="left_limit" type="Position2D" parent="."]
+
+transform/pos = Vector2( -455.743, 937.885 )
+
+[node name="right_limit" type="Position2D" parent="."]
+
+transform/pos = Vector2( 2547.3, 920.6 )
+transform/scale = Vector2( 1, 0.896945 )
+
+[node name="foreground" type="TileMap" parent="."]
+
+transform/pos = Vector2( 0, 4 )
+mode = 0
+tile_set = ExtResource( 2 )
+cell/size = Vector2( 64, 64 )
+cell/quadrant_size = 16
+cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+cell/half_offset = 2
+cell/tile_origin = 0
+cell/y_sort = false
+collision/use_kinematic = false
+collision/friction = 1.0
+collision/bounce = 0.0
+collision/layers = 1
+collision/mask = 1
+occluder/light_mask = 1
+tile_data = IntArray(  )
+__meta__ = { "_edit_lock_":true }
+
+
