@@ -1,0 +1,74 @@
+[gd_resource type="TileSet" load_steps=13 format=1]
+
+[ext_resource path="res://tileset-gound/c-tile01.png" type="Texture" id=1]
+[ext_resource path="res://tileset-gound/c-tile02.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 64.5432, 61.3203 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 110.665, -61.0331, 128.145, -62.0799, 128.147, 64.1208, 102.482, -37.8846 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 84.6072, -3.32696, 102.482, -37.8846, 128.147, 64.1208 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 50.4467, 38.3805, 84.6072, -3.32696, 128.147, 64.1208 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -127.902, 64.9939, -128.201, -61.8705, -107.895, -61.0331, -85.4006, 2.63126 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -127.902, 64.9939, -85.4006, 2.63126, -37.7348, 37.1889 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 13.903, 46.7221, 50.4467, 38.3805, 128.147, 64.1208 )
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 13.903, 46.7221, 128.147, 64.1208, -127.902, 64.9939 )
+
+[sub_resource type="ConvexPolygonShape2D" id=9]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -37.7348, 37.1889, 13.903, 46.7221, -127.902, 64.9939 )
+
+[sub_resource type="ConvexPolygonShape2D" id=10]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -127.902, 64.9939, -37.7348, 37.1889, -127.902, 64.9939 )
+
+[resource]
+
+0/name = "Sprite"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/region = Rect2( 0, 0, 128, 128 )
+0/occluder_offset = Vector2( 64, 64 )
+0/navigation_offset = Vector2( 64, 64 )
+0/shape_offset = Vector2( 64, 64 )
+0/shapes = [ SubResource( 1 ) ]
+1/name = "Sprite 2"
+1/texture = ExtResource( 2 )
+1/tex_offset = Vector2( 0, 0 )
+1/region = Rect2( 0, 0, 256, 128 )
+1/occluder_offset = Vector2( 128, 64 )
+1/navigation_offset = Vector2( 128, 64 )
+1/shape_offset = Vector2( 128, 64 )
+1/shapes = [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ]
+
